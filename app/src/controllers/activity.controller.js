@@ -21,7 +21,7 @@ function getAllActivities(req, res, next) {
     activityService.getAllActivities()
         .then(() => {
             console.log('resolved')
-            res.send({ message: 'works' })
+            res.send({ message: 'sent' })
         })
         .catch(err => {
             console.log('error getting activities')
