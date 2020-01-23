@@ -32,16 +32,34 @@ addTime.onclick = () => {
         });
 }
 
+const generateCard = (fullDate, day, time) => {
+    let timeList = '';
+    for (let i = 0; i < time.length; i++) {
+        timeList += `<li class="collection-item">${time[i]}</li>`;
+    }
+    return `<li class="col s12 m4">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">${fullDate}</span>
+                        <p>${day}</p>
+                        <ul class="collection">
+                            ${timeList}
+                        </ul>
+                        <p>Times: ${time.length}</p>
+                    </div>
+                </div>
+            </li>`;
+}
 
 const getAllActivities = () => {
     axios.get('http://localhost:8000/api/activities')
         .then(function (response) {
-            activities.innerHTML = '';
+            let act = '';
             response.data.forEach(item => {
-                const listItem = document.createElement("LI");
-                listItem.innerHTML = item.time;
-                activities.appendChild(listItem);
+                const listItem = generateCard(item.fullDate, item.day, item.time);
+                act += listItem;
             })
+            activities.innerHTML = act;
             console.log(response);
         })
         .catch(function (error) {
