@@ -23,7 +23,7 @@ function getAllActivities(req, res, next) {
             res.json(activities)
         })
         .catch(err => {
-            console.log(err)
+            console.log('error getting activities')
             res.send(err)
         });
 }
