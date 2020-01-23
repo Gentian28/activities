@@ -22,5 +22,8 @@ function getAllActivities(req, res, next) {
             console.log('resolved')
             res.json(activities)
         })
-        .catch(err => res.send(err));
+        .catch(err => {
+            console.log(err)
+            res.send(err)
+        });
 }
