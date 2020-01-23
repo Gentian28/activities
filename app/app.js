@@ -14,6 +14,15 @@ app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Activities app application." });
 });
 
+app.get('/api', (req, res) => {
+    res.json({ "message": "from api" });
+});
+
+
+app.get('/api/activity', (req, res) => {
+    res.json({ "message": "from activity api" });
+});
+
 // connect to mongodb
 mongoose.connect(config.mongodb.dbURI, () => {
     console.log('Conected to MongoDB');
