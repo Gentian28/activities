@@ -24,7 +24,7 @@ app.get('/api/activity', (req, res) => {
 });
 
 // connect to mongodb
-mongoose.connect(config.mongodb.dbURI, () => {
+mongoose.connect(config.mongodb.dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, () => {
     console.log('Conected to MongoDB');
 })
 
