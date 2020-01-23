@@ -16,6 +16,7 @@ function createActivity(req, res, next) {
 }
 
 function getAllActivities(req, res, next) {
+    console.log('hitted')
     activityService.getAllActivities()
         .then(activities => res.json(activities))
         .catch(err => next(err));
