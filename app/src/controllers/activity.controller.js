@@ -16,14 +16,15 @@ function createActivity(req, res, next) {
 }
 
 function getAllActivities(req, res, next) {
-    console.log('hitted')
-    activityService.getAllActivities()
-        .then(activities => {
-            console.log('resolved')
-            res.json(activities)
-        })
-        .catch(err => {
-            console.log('error getting activities')
-            res.send(err)
-        });
+    res.send({ message: 'works' })
+    //     console.log('hitted')
+    //     activityService.getAllActivities()
+    //         .then(activities => {
+    //             console.log('resolved')
+    //             res.json(activities)
+    //         })
+    //         .catch(err => {
+    //             console.log('error getting activities')
+    //             res.send(err)
+    //         });
 }
