@@ -29,7 +29,6 @@ try {
     })
 } catch (error) {
     console.log(error);
-    handleError(error);
 }
 // connect to mongodb
 // mongoose.connect(config.mongodb.dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, () => {
