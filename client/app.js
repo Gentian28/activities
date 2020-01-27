@@ -22,7 +22,7 @@ addTime.onclick = () => {
         time
     }
 
-    axios.post('http://localhost:8000/api/activity', activity)
+    axios.post('https://activitiesfrequency.herokuapp.com/api/activity', activity)
         .then(function (response) {
             console.log(response);
             getAllActivities();
@@ -52,7 +52,7 @@ const generateCard = (fullDate, day, time) => {
 }
 
 const getAllActivities = () => {
-    axios.get('http://localhost:8000/api/activities')
+    axios.get('https://activitiesfrequency.herokuapp.com/api/activities')
         .then(function (response) {
             let act = '';
             response.data.forEach(item => {
