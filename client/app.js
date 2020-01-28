@@ -54,12 +54,12 @@ const generateCard = (fullDate, day, time) => {
 const getAllActivities = () => {
     axios.get('https://activitiesfrequency.herokuapp.com/api/activities')
         .then(function (response) {
-            // let act = '';
-            // response.data.forEach(item => {
-            //     const listItem = generateCard(item.fullDate, item.day, item.time);
-            //     act += listItem;
-            // })
-            // activities.innerHTML = act;
+            let act = '';
+            response.data.forEach(item => {
+                const listItem = generateCard(item.fullDate, item.day, item.time);
+                act += listItem;
+            })
+            activities.innerHTML = act;
             console.log(response);
         })
         .catch(function (error) {

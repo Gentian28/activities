@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "pushToProd": "git status && git add -A && git commit -m \"test commit\" && git push origin dev && git checkout prod && git merge dev && git push origin prod && git checkout dev"
+    "pushToProd": "git status && git add -A && git commit -m \"Refactor app.js\" && git push origin dev && git checkout prod && git merge dev && git push origin prod && git checkout dev"
   },
   "author": "Gentian Shkembi",
   "license": "ISC",
